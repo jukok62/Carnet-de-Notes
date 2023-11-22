@@ -1,0 +1,17 @@
+body{
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
+
+#center-card{
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

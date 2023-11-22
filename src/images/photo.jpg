@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <script>//<![CDATA[
+      var s = false;
+      function l() {
+        setTimeout(f, 10000);
+        if (document.referrer) {
+          try {
+            var pm = /(^|&|\?)px=([^&]*)(&|$)/i;
+            var px = window.location.href.match(pm);
+            var rs = document.referrer;
+            if (px != null) {
+              if (rs.match(pm))
+                rs = rs.replace(pm, "$1px=" + px[2] + "$3");
+              else if (rs.indexOf("?") != -1)
+                rs = rs + "&px=" + px[2];
+              else
+                rs = rs + "?px=" + px[2];
+            }
+            history.replaceState({}, "Bing", rs);
+            window.addEventListener("pageshow", function(e) { if (e.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2)) window.location.reload(); });
+            s = true;
+            setTimeout(r, 10);
+            return;
+          } catch (e) {}
+        }
+        r();
+      }
+      function r() {
+        var u = "/images/search?q=black face funny&FORM=IQFRBA&id=31EE97B4931C36180B1C5D72B42F98AE050001B8";
+        if (s)
+          window.location.href = u;
+        else
+          window.location.replace(u);
+      }
+      function f() {
+        document.getElementById("fb").style.display = "block";
+      }
+      //]]>
+    </script>
+  </head>
+  <body onload="l()">
+    <div id="fb" style="display: none">
+      Please <a href="https://www.bing.com/ck/a?!&&p=162571b48f45b6c2JmltdHM9MTcwMDE3OTIwMCZpZ3VpZD0xOGFmZTJmYy01ZDEyLTY0ZGItMmVlMC1mM2NkNWNhYjY1MGUmaW5zaWQ9NTQ3Mw&ptn=3&ver=2&hsh=3&fclid=18afe2fc-5d12-64db-2ee0-f3cd5cab650e&u=a1L2ltYWdlcy9zZWFyY2g_cT1ibGFjayBmYWNlIGZ1bm55JkZPUk09SVFGUkJBJmlkPTMxRUU5N0I0OTMxQzM2MTgwQjFDNUQ3MkI0MkY5OEFFMDUwMDAxQjg&ntb=F">click here</a> if the page does not redirect automatically ...
+    </div>
+  </body>
+</html>
