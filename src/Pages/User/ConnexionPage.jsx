@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import connexionService from '../../Services/connexionService'
 import '../../Styles/page.css'
 import { toast } from 'react-toastify';
+import GlobalContext from '../../context/GlobalContext';
 
 const ConnexionPage = () => {
-
+    const {setUserId} = useContext(GlobalContext)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [connexionResult, setConnexionResult] = useState(null);
@@ -25,6 +26,7 @@ const ConnexionPage = () => {
       try {
           const response = await connexionService.AddConn(email, password);
           setConnexionResult(response.data);
+          setUserId(response.data.user.id_user)
           // toast.success("Votre connexion est un succès")
         } catch (error) {
           console.error("Erreur dans handleConn :", error);

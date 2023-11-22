@@ -10,18 +10,21 @@ import ConnexionPage from './Pages/User/ConnexionPage';
 import NotePageById from './Pages/Note/NotePageById';
 import CategoriePage from './Pages/Categorie/CategoriePage2';
 import DatePage from './Pages/date/DatePages'
-
+import Globalcontext from './context/GlobalContext';
+import { useState } from 'react';
 
 
 function App() {
+  const [userId, setUserId] = useState(1);
   return <>
+  <Globalcontext.Provider value={{userId, setUserId}}>
   <BrowserRouter>
     <NavBar/>
     <Routes>
       <Route path={'/'}  element={<NotePage/>}/>
       <Route path={'/note/:id'}  element={<NotePageById/>}/>
       <Route path={'/Creation'}  element={<Creationpage/>}/>
-      <Route path={'/MonCompte/:id'}  element={<MonEspacePage/>}/>
+      <Route path={'/MonCompte'}  element={<MonEspacePage/>}/>
       <Route path={'/Inscription'}  element={<InscriptionPage/>}/>
       <Route path={'/Connexion'}  element={<ConnexionPage/>}/>
       <Route path={'/categorie/:id'} element={<CategoriePage/>}/>
@@ -29,6 +32,7 @@ function App() {
      
     </Routes>
   </BrowserRouter>
+  </Globalcontext.Provider>
   <ToastContainer
         position="bottom-right"
         autoClose={5000}

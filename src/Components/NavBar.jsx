@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import '../Styles/navbar.css'
 import {Link} from 'react-router-dom'
+import GlobalContext from '../context/GlobalContext';
 
 const NavBar = () => {
   
+  const {userId} = useContext(GlobalContext)
     const [currentPage, setCurrentPage] = useState("Post-it")
    const fetchIdUser = async () => {
     

@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import noteService from '../../Services/noteService'
 import "../../Styles/Creationpage.css"
 import { toast } from 'react-toastify';
+import GlobalContext from '../../context/GlobalContext';
+
 
 const Creationpage = () => {
 
+    const {userId} = useContext(GlobalContext)
     const [creation, setCreation] = useState({
         
         titre : '',
@@ -12,7 +15,7 @@ const Creationpage = () => {
         categorie : '',
         color :'',
         date : '',
-        id_user :'',
+        id_user : userId,
     });
 
     const handleChange = (e) => {
@@ -24,6 +27,7 @@ const Creationpage = () => {
     const handleAdd = async (e) => {
         e.preventDefault()
         try {
+          console.log(creation);
            const response = await noteService.AddCreation(creation)
            toast.success("Le Post-It "+ creation.titre + " à bien été crée");
         } catch (e) {
@@ -31,13 +35,15 @@ const Creationpage = () => {
         }
         console.log(creation)
     }
-  return (
+  return <>
+  
+    
     <div id="form-main">
       <div id="form-div">
         <form className="form" id="form1">
          
           <p>
-            <input name="id_user" type="number" className=" feedback-input"
+            <input name="id_user" type="hidden" className=" feedback-input"
               placeholder="Votre Identifiant" value={creation.id_user}
               id="id_user" onChange={handleChange}/>
           </p>
@@ -77,7 +83,7 @@ const Creationpage = () => {
         </form>
       </div>
     </div>
-  );
+  </>;
 };
 
 export default Creationpage;
