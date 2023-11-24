@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import noteService from '../../Services/noteService'
-import { useParams } from 'react-router-dom'
 import NoteComponentById from '../../Components/Note/NoteComponentById'
 import '../../Styles/page.css'
+import GlobalContext from '../../context/GlobalContext'
+
 
 const NotePageById = () => {
 
-    const {id} = useParams()
+    const {userId} = useContext(GlobalContext)
     const [notes, setNotes] = useState([]);
 
     const fecthNoteById = async () => {
         try {
-            const response = await noteService.getNoteById(id)
+            const response = await noteService.getNoteById(userId)
+            console.log(response)
             setNotes(response.data)
         } catch (e) {
             console.log(e)

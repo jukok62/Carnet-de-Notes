@@ -18,7 +18,6 @@
 }
 body{
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #8e9eab, #eef2f3); 
   height: 100vh;
 }
 .card-wrap{
@@ -84,31 +83,11 @@ body{
   position: relative;
   bottom: 0px;
   cursor: pointer;
-  background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+  /* background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2)); */
 }
 
 .card-header.one{
-  background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2));
-}
-.card-header.two{
-  background: linear-gradient(to bottom left, var(--card2-gradient-color1), var(--card2-gradient-color2));
-}
-.card-header.three{
-  background: linear-gradient(to bottom left, var(--card3-gradient-color1), var(--card3-gradient-color2));
-}
-.card-header.four{
-  background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+  /* background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2)); */
 }
 
-.card-btn .one:hover {
-  background-color: black ;
-}
-.card-btn.two{
-  background: linear-gradient(to left, var(--card2-gradient-color1), var(--card2-gradient-color2));
-}
-.card-btn.three{
-  background: linear-gradient(to left, var(--card3-gradient-color1), var(--card3-gradient-color2));
-}
-.card-btn.four{
-  background: linear-gradient(to left, var(--card4-gradient-color1), var(--card4-gradient-color2));
-}
+

@@ -1,17 +1,25 @@
-body{
+body {
     background-color: whitesmoke;
-    overflow-y: scroll;
+    overflow-y: scroll; /* Ajoute une barre de défilement à la fenêtre du navigateur */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hauteur de la fenêtre du navigateur */
+    margin: 0; /* Supprime les marges par défaut du body */
 }
 
-#center-card{
+#center-card {
     display: block;
-    margin: auto;
-    width: 80%;
+    margin-left: 15%;
     height: auto;
+    max-height: 100vh; /* Hauteur maximale avant l'apparition de la barre de défilement */
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Ajoute une barre de défilement verticale si nécessaire */
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }

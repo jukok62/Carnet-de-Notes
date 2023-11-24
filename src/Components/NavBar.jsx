@@ -13,7 +13,7 @@ const NavBar = () => {
     return (
         <>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
+<div class="correct-nav">
          <input type="checkbox" id="check"></input>
     <label for="check">
       <i class="fas fa-bars" id="btn"></i>
@@ -21,24 +21,20 @@ const NavBar = () => {
     </label>
     <div class="sidebar">
       <header>POST-IT 2.0</header>
-      <Link to="/" onClick={()=>{
+      <Link to="/note" onClick={()=>{
         setCurrentPage("Post-it")
       }} class={currentPage=="Post-it" && "active"}>
         <i class="fas fa-qrcode"></i>
         <span>Post-it</span>
       </Link>
-      <Link to="#" >
+      <Link to="/categorie" >
         <i class="far fa-building"></i>
         <span>Catégories</span>
       </Link>
-      <Link to="#">
+      <Link to="/date">
         <i class="fas fa-suitcase"></i>
         <span>Dates</span>
-      </Link>
-      <Link to="#">
-        <i class="fas fa-user-graduate"></i>
-        <span>Couleurs</span>
-      </Link>
+      </Link>      
       <Link to="/Creation" onClick={()=>{
         setCurrentPage("Création")
       }} class={currentPage == "Création" && "active"}>
@@ -66,6 +62,7 @@ const NavBar = () => {
       </Link>
       </div>
     </div>
+</div>
         </>
     );
 }

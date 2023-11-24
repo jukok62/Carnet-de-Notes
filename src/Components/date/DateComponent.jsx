@@ -17,13 +17,13 @@ const DateComponent = ({date}) => {
 
     return <>
               <div class="card-wrap">
-  <div class="card-header one">
+  <div class="card-header one" style={{backgroundColor:date.couleur}}>
     <p>{date.categorie}</p>
   </div>
   <div class="card-content">
     <h1 class="card-title">{date.titre_note}</h1>
     <p class="card-text">{date.contenu_note}</p>
-    <Link to={'/note/'+ date.id_user}><button class="card-btn one" onClick={handleDelete}>supprimer</button></Link>
+    <Link to={'/note/'+ date.id_user}><button class="card-btn one" style={{backgroundColor:date.couleur}} onClick={handleDelete}>supprimer</button></Link>
  </div>
 </div>
 

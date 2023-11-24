@@ -1,17 +1,18 @@
-import React, { useEffect , useState} from 'react'
+import React, { useEffect , useState, useContext} from 'react'
 import categorieService from '../../Services/categorieService'
 import CategorieComponent from '../../Components/categorie/CategorieComponent';
 import '../../Styles/page.css'
-import { useParams } from 'react-router-dom';
+import GlobalContext from '../../context/GlobalContext';
 
 const CategoriePage = () => {
 
-    const {id} = useParams()
+    const {userId} = useContext(GlobalContext)
     const [categories, setCategories] = useState([]);
 
     const fetchCategorieById = async () => {
         try {
-            const response = await categorieService.GetCategorieById(id)
+            const response = await categorieService.GetCategorieById(userId)
+            console.log(response)
             setCategories(response.data)
         } catch (e) {
             console.log(e)

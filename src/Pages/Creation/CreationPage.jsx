@@ -36,53 +36,29 @@ const Creationpage = () => {
         console.log(creation)
     }
   return <>
-  
-    
-    <div id="form-main">
-      <div id="form-div">
-        <form className="form" id="form1">
-         
-          <p>
-            <input name="id_user" type="hidden" className=" feedback-input"
-              placeholder="Votre Identifiant" value={creation.id_user}
-              id="id_user" onChange={handleChange}/>
-          </p>
-          <p>
-            <input name="titre" type="text" className="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
-              placeholder="Votre Titre" value={creation.titre}
-              id="name" onChange={handleChange}/>
-          </p>
-          
-          <p>
-            <input name="categorie" type="text" className="validate[required,custom[email]] feedback-input"
-              id="email"
-              placeholder="Votre CatÃ©gorie" value={creation.categorie} onChange={handleChange}/>
-          </p>
-          
-          <p>
-            <textarea name="contenu" className="validate[required,length[6,300]] feedback-input"
-              id="comment"
-              placeholder="Entrez le contenue de votre note" value={creation.contenu} onChange={handleChange}
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+
+        <div class="conteneur-formulaire ">
+          <form action="#" id='form-connexion'>
+            <h1>Inscription</h1>
+            
+            <input name="id_user" type="hidden" value={creation.id_user} id="id_user" onChange={handleChange}/>
+            <div className='form-interne'>
+            <input type="text" placeholder="Votre Titre" name='titre'  value={creation.titre} onChange={handleChange} />
+            <input type="text" placeholder="Votre Categorie" name='categorie' value={creation.categorie} onChange={handleChange} />
+            </div>
+            <textarea name="contenu" rows={100} placeholder="Entrez le contenue de votre note" value={creation.contenu} onChange={handleChange}
             ></textarea>
-          </p>
-          <p>
-            <input name="color" type="text" className="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
-              placeholder="Choisissez la couleur de votre post-it" value={creation.color}
-              id="color" onChange={handleChange}/>
-          </p>
-          <p>
-            <input name="date" type="date" className="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
-               value={creation.date}
-              id="date" onChange={handleChange}/>
-          </p>
-          
-          <div className="submit">
-            <button id="button-blue" onClick={handleAdd}>SEND</button>
-            <div className="ease"></div>
-          </div>
-        </form>
-      </div>
-    </div>
+            <div className='form-interne'>
+            <input type="color" name='color' value={creation.color} onChange={handleChange} />
+            <input type="date" name='date' value={creation.date} onChange={handleChange} />
+            </div>
+            <button onClick={handleAdd}>Créer</button>
+          </form>
+        </div>
+      
+      
   </>;
 };
 

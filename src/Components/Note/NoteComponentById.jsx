@@ -14,14 +14,14 @@ const NoteComponentById = ({note}) => {
         }
     }
     return <>
-            <div class="card-wrap">
-  <div class="card-header one">
+            <div className="card-wrap">
+  <div className="card-header one" style={{backgroundColor:note.couleur}}>
     <p>{note.categorie}</p>
   </div>
-  <div class="card-content">
-    <h1 class="card-title">{note.titre_note}</h1>
-    <p class="card-text">{note.contenu_note}</p>
-    <Link to={'/note/'+ note.id_user}><button class="card-btn one" onClick={handleDelete}>supprimer</button></Link>
+  <div className="card-content">
+    <h1 className="card-title">{note.titre_note}</h1>
+    <p className="card-text">{note.contenu_note}</p>
+    <Link to={'/note/'+ note.id_user}><button className="card-btn one" style={{backgroundColor:note.couleur}} onClick={handleDelete}>supprimer</button></Link>
  </div>
 </div>
     </>;

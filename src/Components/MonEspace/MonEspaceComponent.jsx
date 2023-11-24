@@ -17,7 +17,7 @@ const MonEspaceComponent = ({ espace }) => {
             id="user-photo"
             src="https://www.bing.com/ck/a?!&&p=162571b48f45b6c2JmltdHM9MTcwMDE3OTIwMCZpZ3VpZD0xOGFmZTJmYy01ZDEyLTY0ZGItMmVlMC1mM2NkNWNhYjY1MGUmaW5zaWQ9NTQ3Mw&ptn=3&ver=2&hsh=3&fclid=18afe2fc-5d12-64db-2ee0-f3cd5cab650e&u=a1L2ltYWdlcy9zZWFyY2g_cT1ibGFjayBmYWNlIGZ1bm55JkZPUk09SVFGUkJBJmlkPTMxRUU5N0I0OTMxQzM2MTgwQjFDNUQ3MkI0MkY5OEFFMDUwMDAxQjg&ntb=1"
             alt="user"
-            title="user"
+            title=""
           />
           <div className="text">
             <p id="user-name">
