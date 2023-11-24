@@ -21,10 +21,13 @@ const NoteComponentById = ({note}) => {
   <div className="card-content">
     <h1 className="card-title">{note.titre_note}</h1>
     <p className="card-text">{note.contenu_note}</p>
+    <div className='btn-suppr-modif'>
     <Link to={'/note/'+ note.id_user}><button className="card-btn one" style={{backgroundColor:note.couleur}} onClick={handleDelete}>supprimer</button></Link>
+    <Link to={'/update/'+ note.id_note}><button className="card-btn one" style={{backgroundColor:note.couleur}}>Modifier</button></Link>
+    </div>
  </div>
 </div>
     </>;
 }
- 
+
 export default NoteComponentById;

@@ -12,7 +12,7 @@
 	padding: 10px 0px 20px;
 }
 
-form{
+#form-connexion{
 	display:  flex;
 	justify-content: center;
 	align-items: center;
@@ -21,28 +21,28 @@ form{
 	text-align: center;
 }
 
-form *{
+#form-connexion *{
 	margin: 10px;
 	width: 50%;
 	height: 50px;
 	border-radius: 10px;
-	box-shadow: 5px 5px 5px #333;
+	
 	background-color: #dad9d9;
 	color:  #333;
 }
 
-form textarea {
+#form-connexion textarea {
 	height : 100px;
 	max-width: 100%;
 }
 
-form h1{
+#form-connexion h1{
 	background-color: inherit;
 	box-shadow: none;
 	font-size: 40px;
 }
 
-form button {
+#form-connexion button {
 	width: 50%;
 }
 
@@ -58,6 +58,6 @@ form button {
 	width: 50%;
 }
 
-form *:hover {
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre légère au survol */
-  }
+#form-connexion *:hover {
+	box-shadow: 5px 5px 5px #333;
+}

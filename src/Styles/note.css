@@ -22,8 +22,8 @@ body{
 }
 .card-wrap{
   margin: 50px 20px;
-  width: 250px;
-  height: 400px;
+  width: 280px;
+  height: 430px;
   background: #fff;
   border-radius: 20px;
   border: 5px solid #fff;
@@ -84,6 +84,13 @@ body{
   bottom: 0px;
   cursor: pointer;
   /* background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2)); */
+}
+
+.btn-suppr-modif{
+  display: flex;
+}
+.btn-suppr-modif button {
+  width: 95%;
 }
 
 .card-header.one{
